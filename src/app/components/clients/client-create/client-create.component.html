@@ -1,0 +1,45 @@
+<!--Create New Client-->
+<div class = "height100px right p-5">
+    <button class = "btn btn-warning" (click) = "openModal(createClient)">
+      Create new Client
+      
+    </button>
+  </div>
+  <!--/Create New Client-->
+  
+  <ng-template #createClient let-modal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h4>Create New Client</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+       
+      </button>
+    </div>
+  
+    <div class="modal-body">
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Name</span>
+        <input class = "form-control" placeholder="John Smith">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Username</span>
+        <input class = "form-control" placeholder="JohnSmith">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">City</span>
+        <input class = "form-control" placeholder="Los Angeles">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Email</span>
+        <input class = "form-control" placeholder="e.g. john.smith@gmail.com">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Phone Number</span>
+        <input class = "form-control" placeholder="+1(818)8589476">
+      </div>
+    </div>
+  
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="modal.dismiss()">Cancel</button>
+      <button type="button" class="btn btn-warning">Create</button>
+    </div>
+  </ng-template>

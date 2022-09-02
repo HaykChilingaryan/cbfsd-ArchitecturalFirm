@@ -1,0 +1,109 @@
+<app-client-create></app-client-create>
+
+ 
+
+  <!---Update client details -->
+  <ng-template let-modal #updateModal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h4>Update Client Details</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+       
+      </button>
+    </div>
+    <div class="modal-body">
+      
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Name</span>
+        <input class = "form-control" placeholder="{{ clientModel?.clientName }}">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Username</span>
+        <input class = "form-control" placeholder="{{ clientModel?.clientUsername }}">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">City</span>
+        <input class = "form-control" placeholder="{{ clientModel?.clientCity }}">
+
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Email</span>
+        <input class = "form-control" placeholder="{{ clientModel?.clientEmail }}">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Phone Number</span>
+        <input class = "form-control" placeholder="{{ clientModel?.clientNumber }}">
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="modal.dismiss()">Close</button>
+      <button type="button" class="btn btn-warning">Save changes</button>
+    </div>
+  </ng-template> <!---Update client details -->
+
+  <!-- Delete Client-->
+  <ng-template #deleteClient let-modal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h4>Delete Client</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+       
+      </button>
+    </div>
+
+    <div class="modal-body">
+        Are you sure you want to delete this client?
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="modal.dismiss()">No</button>
+      <button type="button" class="btn btn-danger">Yes</button>
+    </div>
+  </ng-template>
+
+
+
+
+
+<div class="container-fluid py-3">
+    <div class="row w-100 m-0">
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white border-0">
+                    <h4>Clients</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-flush m-0">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Sr. No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let client of clientObservable | async;  index as idx">
+                            <th scope="row">{{idx+1}}</th>
+                            <td>{{ client["clientName"] }}</td>
+                            <td>{{client["clientUsername"]}}</td>
+                            <td>{{client["clientEmail"]}}</td>
+                            <td>{{client["clientCity"]}}</td>
+                            <td>{{client["clientNumber"]}}</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-warning" (click)="viewClientDetails(updateModal, client)" >Update</button>&nbsp;
+                                <button type="button" class="btn btn-sm btn-warning" (click)="openModal(deleteClient)">Delete</button>
+
+                            </td>
+                            
+                          </tr>                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

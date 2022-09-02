@@ -1,0 +1,126 @@
+ <app-meeting-create></app-meeting-create>
+ <!---Update Meeting details -->
+ <ng-template let-modal #updateModal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h4>Update Meeting Details</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+       
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">ID</span>
+        <input class = "form-control" placeholder="{{ meetingModel?.meetingId }}" disabled>
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Title</span>
+        <input class = "form-control" placeholder="{{ meetingModel?.meetingTitle }}">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Number Of People</span>
+        <input class = "form-control" placeholder="{{ meetingModel?.meetingNumberOfPeople }}">
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Room</span>
+        <input class = "form-control" placeholder="{{ meetingModel?.meetingRoom }}">
+
+      </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Date</span>
+        <input type = "datetime-local" class = "form-control" placeholder="{{ meetingModel?.meetingDate }}">
+      </div>
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="modal.dismiss()">Close</button>
+      <button type="button" class="btn btn-warning">Save changes</button>
+    </div>
+  </ng-template> <!---Update Meeting details -->
+
+  <!-- Cancel Meeting-->
+  <ng-template #deleteClient let-modal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h4>Cancel Meeting</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+       
+      </button>
+    </div>
+
+    <div class="modal-body">
+        Are you sure you want to cancel this meeting?
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="modal.dismiss()">No</button>
+      <button type="button" class="btn btn-danger">Yes</button>
+    </div>
+  </ng-template><!-- Cancel Meeting-->
+
+  <!-- Postpone Meeting-->
+  <ng-template #postponeClient let-modal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h4>Postpone Meeting</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+       
+      </button>
+    </div>
+
+    <div class="modal-body">
+        <div class="d-flex flex-column mb-1">
+            <span class="text-sm text-muted">Postponed Date</span>
+            <input type = "datetime-local" class = "form-control" placeholder="{{ meetingModel?.meetingDate }}">
+          </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="modal.dismiss()">Cancel</button>
+      <button type="button" class="btn btn-warning">Postpone</button>
+    </div>
+  </ng-template><!-- Postpone Meeting-->
+
+
+
+
+<div class="container-fluid py-3">
+    <div class="row w-100 m-0">
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white border-0">
+                    <h4>Clients</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-flush m-0">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Number of People</th>
+                            <th scope="col">Room</th>
+                            <th scope="col">Date</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let meeting of meetingObservable | async;  index as idx">
+                            <th scope="row">{{idx+1}}</th>
+                            <td>{{ meeting["meetingId"] }}</td>
+                            <td>{{ meeting["meetingTitle"] }}</td>
+                            <td>{{meeting["meetingNumberOfPeople"]}}</td>
+                            <td>{{meeting["meetingRoom"]}}</td>
+                            <td>{{meeting["meetingDate"]}}</td>
+                            
+                            <td>
+                                <button type="button" class="btn btn-sm btn-warning" (click)="viewClientDetails(updateModal, meeting)" >Update</button>&nbsp;
+                                <button type="button" class="btn btn-sm btn-warning" (click)="openModal(deleteClient)">Cancel</button>&nbsp;
+                                <button type="button" class="btn btn-sm btn-warning" (click)="openModal(postponeClient)">Postpone</button>
+                            </td>
+                            
+                          </tr>                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

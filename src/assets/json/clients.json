@@ -1,0 +1,34 @@
+[
+    {
+        "clientId":1,
+        "clientName":"John Snow",
+        "clientUsername":"JohnSnow2022",
+        "clientCity":"Los Angeles",
+        "clientEmail":"john.snow@gmail.com",
+        "clientNumber":"1626129112"
+    }, 
+    {
+        "clientId":1,
+        "clientName":"Hayk Chilingaryan",
+        "clientUsername":"Insane",
+        "clientCity":"Los Angeles",
+        "clientEmail":"hayk@gmail.com",
+        "clientNumber":"8188831821"
+    }, 
+    {
+        "clientId":1,
+        "clientName":"Aram Chilingaryan",
+        "clientUsername":"Aramik",
+        "clientCity":"Yerevan",
+        "clientEmail":"aram@gmail.com",
+        "clientNumber":"7192791212"
+    },{
+        "clientId":1,
+        "clientName":"Megan Walker",
+        "clientUsername":"Meganw",
+        "clientCity":"Dallas",
+        "clientEmail":"mw@gmail.com",
+        "clientNumber":"9849485545"
+    }
+    
+]

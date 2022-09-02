@@ -1,0 +1,23 @@
+[
+    {
+        "meetingId":"ET3524",
+        "meetingTitle":"Ice Breaker",
+        "meetingNumberOfPeople":15,
+        "meetingRoom":"E213",
+        "meetingDate":"22/10/2022 12:00:00PM"
+    },
+    {
+        "meetingId":"ET2122",
+        "meetingTitle":"Project Management",
+        "meetingNumberOfPeople":"12",
+        "meetingRoom":"E213",
+        "meetingDate":"22/10/2022 2:00:00PM"
+    },
+    {
+        "meetingId":"ET2562",
+        "meetingTitle":"Project Design",
+        "meetingNumberOfPeople":"3",
+        "meetingRoom":"E213",
+        "meetingDate":"22/10/2022 4:00:00PM"
+    }
+]
