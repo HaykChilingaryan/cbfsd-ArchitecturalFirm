@@ -81,5 +81,6 @@ export interface Meetings {
   meetingTitle: string,
   meetingNumberOfPeople: number,
   meetingRoom: string,
-  meetingDate: Date
+  meetingDate: Date,
+  meetingHost:number
 }

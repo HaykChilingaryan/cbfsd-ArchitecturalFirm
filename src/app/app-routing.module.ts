@@ -5,10 +5,10 @@ import { ClientCreateComponent } from './components/clients/client-create/client
 import { ClientListComponent } from './components/clients/client-list/client-list.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { MeetingCreateComponent } from './components/meetings/meeting-create/meeting-create.component';
 import { MeetingListComponent } from './components/meetings/meeting-list/meeting-list.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},

@@ -29,6 +29,10 @@
         <span class="text-sm text-muted">Date</span>
         <input type = "datetime-local" class = "form-control" placeholder="{{ meetingModel?.meetingDate }}">
       </div>
+      <div class="d-flex flex-column mb-1">
+        <span class="text-sm text-muted">Host</span>
+        <input type = "number" class = "form-control" placeholder="{{ meetingModel?.meetingHost}}">
+      </div>
       
     </div>
     <div class="modal-footer">
@@ -98,7 +102,7 @@
                             <th scope="col">Number of People</th>
                             <th scope="col">Room</th>
                             <th scope="col">Date</th>
-                            
+                            <th scope="col">Host</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -109,7 +113,7 @@
                             <td>{{meeting["meetingNumberOfPeople"]}}</td>
                             <td>{{meeting["meetingRoom"]}}</td>
                             <td>{{meeting["meetingDate"]}}</td>
-                            
+                            <td>{{meeting["meetingHost"]}}</td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-warning" (click)="viewClientDetails(updateModal, meeting)" >Update</button>&nbsp;
                                 <button type="button" class="btn btn-sm btn-warning" (click)="openModal(deleteClient)">Cancel</button>&nbsp;
