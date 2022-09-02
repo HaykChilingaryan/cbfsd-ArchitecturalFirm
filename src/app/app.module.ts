@@ -19,6 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MeetingsComponent } from './components/meetings/meetings.component';
 import { MeetingListComponent } from './components/meetings/meeting-list/meeting-list.component';
 import { MeetingCreateComponent } from './components/meetings/meeting-create/meeting-create.component';
+import { ChangePasswordComponent } from './components/auth/change-password/change-password.component';
+import { AccountInfoComponent } from './components/auth/account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { MeetingCreateComponent } from './components/meetings/meeting-create/mee
     MeetingsComponent,
     MeetingListComponent,
     MeetingCreateComponent,
+    ChangePasswordComponent,
+    AccountInfoComponent,
   ],
   imports: [
     BrowserModule,

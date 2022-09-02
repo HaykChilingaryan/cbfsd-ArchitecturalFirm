@@ -9,6 +9,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { MeetingCreateComponent } from './components/meetings/meeting-create/meeting-create.component';
 import { MeetingListComponent } from './components/meetings/meeting-list/meeting-list.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ChangePasswordComponent } from './components/auth/change-password/change-password.component';
+import { AccountInfoComponent } from './components/auth/account-info/account-info.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:"clients", component:ClientsComponent},
   {path:"createmeeting", component:MeetingCreateComponent},
   {path:"meetinglist", component:MeetingListComponent},
+  {path:"changepassword", component:ChangePasswordComponent},
+  {path:"accountinfo", component:AccountInfoComponent},
 
   
 
